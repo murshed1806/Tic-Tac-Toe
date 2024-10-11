@@ -1,8 +1,18 @@
-# React + Vite
+# Tic Tac Toe Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple implementation of the classic game Tic Tac Toe, built using React and Vite.
 
-Currently, two official plugins are available:
+Live Link : https://tic-tac-toe-flax-phi.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to play
+
+- The game is played on a 3x3 grid
+- Two players, X and O, take turns marking a square
+- The first player to get three in a row (horizontally, vertically, or diagonally) wins the game
+- If all squares are filled and no player has won, the game is a draw
+
+## How to run
+
+- Run `npm install` to install the dependencies
+- Run `npm run dev` to start the development server
+- Open [http://localhost:3000](http://localhost:3000) in your browser to play the game
