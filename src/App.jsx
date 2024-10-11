@@ -3,7 +3,7 @@ import { useState } from "react";
 function Square({ value, onSquareClick }) {
   return (
     <button
-      className="bg-white border border-gray-400 h-12 w-12 m-1 leading-9 text-lg"
+      className="h-16 w-16 md:h-24 md:w-24 bg-white border border-gray-400 m-1 leading-9 text-3xl font-bold"
       onClick={onSquareClick}
     >
       {value}
@@ -57,7 +57,6 @@ function Board({ xIsNext, squares, onPlay }) {
     </>
   );
 }
-
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
@@ -108,19 +107,32 @@ export default function Game() {
     }
 
     return (
-      <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+      <li
+        key={move}
+        className="flex items-center justify-between py-2 px-4 hover:bg-gray-100"
+      >
+        <button
+          className="text-sm font-medium text-gray-700"
+          onClick={() => jumpTo(move)}
+        >
+          {description}
+        </button>
       </li>
     );
   });
 
   return (
-    <div>
-      <div>
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+    <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center w-full md:w-1/2">
+        <Board
+          xIsNext={xIsNext}
+          squares={currentSquares}
+          onPlay={handlePlay}
+          className="mb-4"
+        />
       </div>
-      <div>
-        <ol>{moves}</ol>
+      <div className="flex flex-col items-center w-full md:w-1/2">
+        <ol className="list-none">{moves}</ol>
       </div>
     </div>
   );
